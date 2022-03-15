@@ -1,0 +1,16 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="col-md-12">
+
+    @include('common.errors')
+
+    <h1>{!! trans('edit_$MODEL_NAME$') !!}</h1>
+
+    {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['app.$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->id], 'method' => 'patch']) !!}
+
+        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+
+    {!! Form::close() !!}
+</div>
+@endsection

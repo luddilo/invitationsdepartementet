@@ -1,0 +1,16 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="col-md-12">
+
+    @include('common.errors')
+
+    <h1>{!! trans('create_$MODEL_NAME$') !!}</h1>
+
+    {!! Form::open(['route' => 'app.$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+
+        @include('$MODEL_NAME_PLURAL_CAMEL$.fields')
+
+    {!! Form::close() !!}
+</div>
+@endsection
